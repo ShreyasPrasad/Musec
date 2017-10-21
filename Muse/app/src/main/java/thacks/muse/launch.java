@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class launch extends AppCompatActivity {
 
     EditText user, pass;
-    Button login;
+    Button login, createUser;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     @Override
@@ -34,10 +34,19 @@ public class launch extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  existingUserLogin();
+                if (validLogin())
+                    existingUserLogin(user.getText().toString(), pass.getText().toString());
             }
         });
 
+        createUser=(Button)findViewById(R.id.createAccount);
+        createUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (validLogin())
+                 createNewUser(user.getText().toString(), pass.getText().toString());
+            }
+        });
 
         //firebase
         mAuth = FirebaseAuth.getInstance();
@@ -58,30 +67,41 @@ public class launch extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (!task.isSuccessful()) {
-                            Toast.makeText(launch.this, R.string.existing_failed,
+                            Toast.makeText(launch.this, R.string.existingUserError,
                                     Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            //handle success
+                            Toast.makeText(launch.this, R.string.existingUserSuccess,
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
-    private void createUser(String email, String password){
+    private void createNewUser(String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (!task.isSuccessful()) {
-                            Toast.makeText(launch.this,R.string.newUserError, Toast.LENGTH_SHORT);
+                            Toast.makeText(launch.this,R.string.newUserError, Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(launch.this,R.string.newUserError, Toast.LENGTH_SHORT);
+                            Toast.makeText(launch.this,R.string.newUserSuccess, Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    private boolean validLogin(){
+        if ((user.getText()==null||pass.getText()==null)&&((!user.getText().equals("Enter email"))||(!user.getText().equals("Enter password")))){
+            Toast.makeText(launch.this, "Either username or password field is empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
 

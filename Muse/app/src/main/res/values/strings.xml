@@ -1,13 +1,18 @@
 <resources>
-    <string name="app_name">Muse</string>
+    <string name="app_name">Musec</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_username">Enter Musec Username</string>
-    <string name="prompt_password">Enter Musec Password</string>
+    <string name="prompt_username">Enter Email</string>
+    <string name="prompt_password">Enter Password</string>
     <string name="newUserError">Account Creation/Authentication Failed.</string>
-    <string name="existingUserError"> Failed.</string>
-    <string name="action_sign_in">Sign in</string>
     <string name="newUserSuccess">Account Creation Successful.</string>
+
+    <string name="existingUserError">Login Failed.</string>
     <string name="existingUserSuccess">Login Succesful</string>
+
+    <string name="action_sign_in">Sign in</string>
+    <string name="createAccount">Create Account</string>
+
+
 
 </resources>

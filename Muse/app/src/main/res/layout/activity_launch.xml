@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context="thacks.muse.launch">
 
   <RelativeLayout
       android:layout_width="395dp"
       android:layout_height="643dp"
       tools:layout_editor_absoluteY="8dp"
+
       tools:layout_editor_absoluteX="8dp">
 
       <EditText
@@ -17,29 +19,64 @@
           android:layout_width="300dp"
           android:layout_height="wrap_content"
           android:hint="@string/prompt_username"
-          android:layout_marginTop="201dp"
-
-          android:layout_centerHorizontal="true" />
+          android:textColorHint="#fff"
+          android:textColor="#fff"
+          android:backgroundTint="#fff"
+          android:layout_below="@+id/imageView"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"
+          android:layout_marginLeft="29dp"
+          android:layout_marginStart="29dp" />
 
       <EditText
           android:id="@+id/passPrompt"
           android:layout_width="300dp"
           android:layout_height="wrap_content"
+          android:textColorHint="#fff"
           android:hint="@string/prompt_password"
-          android:layout_marginTop="16dp"
+          android:textColor="#fff"
+          android:layout_marginTop="14dp"
+          android:backgroundTint="#fff"
           android:layout_below="@+id/userPrompt"
           android:layout_alignLeft="@+id/userPrompt"
-          android:layout_alignStart="@+id/userPrompt" />
+          android:layout_alignStart="@+id/userPrompt"
+          android:inputType="textPassword"/>
 
       <Button
           android:id="@+id/login"
           android:layout_width="300dp"
+          android:background="@color/colorAccent"
           android:layout_height="wrap_content"
           android:text="@string/action_sign_in"
-          android:layout_marginTop="37dp"
+          android:layout_marginTop="91dp"
           android:layout_below="@+id/passPrompt"
           android:layout_alignLeft="@+id/passPrompt"
           android:layout_alignStart="@+id/passPrompt" />
+
+      <Button
+          android:id="@+id/createAccount"
+          android:layout_width="300dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="19dp"
+          android:text="@string/createAccount"
+          android:layout_centerHorizontal="true"
+          android:layout_below="@+id/login"
+          android:layout_alignLeft="@+id/login"
+          android:layout_alignStart="@+id/login" />
+
+      <ImageView
+          android:id="@+id/imageView"
+          android:scaleY="0.8"
+          android:scaleX="0.8"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:srcCompat="@drawable/logotitle"
+          android:layout_marginTop="12dp"
+          android:layout_marginRight="28dp"
+          android:layout_marginEnd="28dp"
+          android:layout_alignParentTop="true"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentEnd="true" />
 
   </RelativeLayout>
 
