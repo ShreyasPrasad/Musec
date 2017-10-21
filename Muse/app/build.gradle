@@ -26,7 +26,7 @@ dependencies {
     })
 
 
-    compile files(‘ libs / libmuse - android.jar ’)
+    compile files(‘libs/libmuse-android.jar’)
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.spotify.android:auth:1.0.0-alpha'
