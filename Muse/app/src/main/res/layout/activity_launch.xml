@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="thacks.muse.launch">
+
+  <RelativeLayout
+      android:layout_width="395dp"
+      android:layout_height="643dp"
+      tools:layout_editor_absoluteY="8dp"
+      tools:layout_editor_absoluteX="8dp">
+
+      <EditText
+          android:id="@+id/userPrompt"
+          android:layout_width="300dp"
+          android:layout_height="wrap_content"
+          android:hint="@string/prompt_username"
+          android:layout_marginTop="201dp"
+
+          android:layout_centerHorizontal="true" />
+
+      <EditText
+          android:id="@+id/passPrompt"
+          android:layout_width="300dp"
+          android:layout_height="wrap_content"
+          android:hint="@string/prompt_password"
+          android:layout_marginTop="16dp"
+          android:layout_below="@+id/userPrompt"
+          android:layout_alignLeft="@+id/userPrompt"
+          android:layout_alignStart="@+id/userPrompt" />
+
+      <Button
+          android:id="@+id/button"
+          android:layout_width="300dp"
+          android:layout_height="wrap_content"
+          android:text="@string/action_sign_in"
+          android:layout_marginTop="41dp"
+          android:layout_below="@+id/passPrompt"
+          android:layout_alignLeft="@+id/passPrompt"
+          android:layout_alignStart="@+id/passPrompt" />
+
+  </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
