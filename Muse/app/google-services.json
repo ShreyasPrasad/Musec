@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "84396435375",
+    "firebase_url": "https://muse-c0bf2.firebaseio.com",
+    "project_id": "muse-c0bf2",
+    "storage_bucket": "muse-c0bf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84396435375:android:460518923042b3a3",
+        "android_client_info": {
+          "package_name": "thacks.muse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84396435375-btsj01m7bbrb8ofq65haprs7l767mcg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thacks.muse",
+            "certificate_hash": "ffebfa1c936cfac551c2305307fe8359fd09cddb"
+          }
+        },
+        {
+          "client_id": "84396435375-15cgpnqtnc862q65avtaig6vj5ccbs5j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD22Edmn1Kfd9gRZzKuKQxQyvzfbkpqlQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84396435375-15cgpnqtnc862q65avtaig6vj5ccbs5j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

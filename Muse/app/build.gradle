@@ -30,5 +30,9 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.spotify.android:auth:1.0.0-alpha'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
     testCompile 'junit:junit:4.12'
 }
+
+
+apply plugin: 'com.google.gms.google-services'
