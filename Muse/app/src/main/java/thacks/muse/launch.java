@@ -15,6 +15,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class launch extends AppCompatActivity {
 
@@ -22,6 +27,7 @@ public class launch extends AppCompatActivity {
     Button login, createUser;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    public static String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +79,27 @@ public class launch extends AppCompatActivity {
                         else{
                             Toast.makeText(launch.this, R.string.existingUserSuccess,
                                     Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference().child("USERS").child(mAuth.getCurrentUser().getUid().toString()).child("firstName");
+                            myRef.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()){
+                                        loadUser();
+                                        Intent intent=new Intent(launch.this,profile.class);
+                                        startActivity(intent);
+                                    }
+                                    else{
+                                        Intent intent=new Intent(launch.this,userRegistration.class);
+                                        startActivity(intent);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError error) {
+                                    Log.d("error",error.getDetails()+"");
+                                }
+                            });
                         }
                     }
                 });
@@ -89,14 +116,25 @@ public class launch extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(launch.this,R.string.newUserSuccess, Toast.LENGTH_SHORT).show();
+                            establishUser();
+                            Intent intent=new Intent(launch.this,userRegistration.class);
+                            startActivity(intent);
                         }
                     }
                 });
     }
 
     private boolean validLogin(){
-        if ((user.getText()==null||pass.getText()==null)&&((!user.getText().equals("Enter email"))||(!user.getText().equals("Enter password")))){
+        if ((user.getText()==null||pass.getText()==null)||((user.getText().equals("Enter email"))||(user.getText().equals("Enter password")))){
             Toast.makeText(launch.this, "Either username or password field is empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (user.getText().length()<8){
+            Toast.makeText(launch.this, "Username must be atleast 8 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (pass.getText().length()<8){
+            Toast.makeText(launch.this, "Password must be atleast 8 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
         else{
@@ -104,6 +142,39 @@ public class launch extends AppCompatActivity {
         }
     }
 
+    currentUser cU;
+    private void loadUser(){
+        //get firebase info pertaining to user
+        id=mAuth.getCurrentUser().getUid().toString();
+        //create instance of user class with information
+        readValue();
+    }
+
+    private void establishUser(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference().child("USERS").child(mAuth.getCurrentUser().getUid().toString()).child("email");
+        myRef.setValue(user.getText().toString());
+    }
+
+    private void readValue(){
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference().child("USERS").child(id);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String firstName=dataSnapshot.child("firstName").getValue().toString();
+                String lastName=dataSnapshot.child("lastName").getValue().toString();
+                String email=dataSnapshot.child("email").getValue().toString();
+                cU=new currentUser(firstName,lastName,email);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.d("error",error.getDetails()+"");
+            }
+        });
+    }
 
     @Override
     public void onStart() {
@@ -118,3 +189,5 @@ public class launch extends AppCompatActivity {
         }
     }
 }
+
+
