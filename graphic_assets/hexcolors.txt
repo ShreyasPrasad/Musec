@@ -1,0 +1,17 @@
+accent colors
+52bdec
+367c2b
+ee3124
+7482bf
+fed17b
+f9b5a6
+00af9f
+ea7f1e
+54ee58
+e7ed3a
+
+background colors
+
+6a6a6a
+darker
+4f4f4f
