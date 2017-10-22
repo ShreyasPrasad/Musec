@@ -1,13 +1,15 @@
 package thacks.muse;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 public class launch extends AppCompatActivity {
 
     EditText user, pass;
-    Button login, createUser;
+    ImageButton login, createUser;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     public static String id;
@@ -36,7 +38,7 @@ public class launch extends AppCompatActivity {
         user=(EditText)findViewById(R.id.userPrompt);
         pass=(EditText)findViewById(R.id.passPrompt);
         //buttons
-        login=(Button)findViewById(R.id.login);
+        login=(ImageButton)findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +47,7 @@ public class launch extends AppCompatActivity {
             }
         });
 
-        createUser=(Button)findViewById(R.id.createAccount);
+        createUser=(ImageButton)findViewById(R.id.createAccount);
         createUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +67,10 @@ public class launch extends AppCompatActivity {
                 }
             }
         };
+
+        //set all view fonts
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/moonlight.ttf");
+        user.setTypeface(font);
     }
     private void existingUserLogin(String email, String password){
         mAuth.signInWithEmailAndPassword(email, password)
@@ -84,12 +90,29 @@ public class launch extends AppCompatActivity {
                             myRef.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot dataSnapshot) {
+                                    loadUser();
                                     if (dataSnapshot.exists()){
-                                        loadUser();
-                                        Intent intent=new Intent(launch.this,profile.class);
-                                        startActivity(intent);
+                                        CountDownTimer timer1=new CountDownTimer(2000,1000) {
+                                            @Override
+                                            public void onTick(long millisUntilFinished) {
+
+
+                                            }
+
+                                            @Override
+                                            public void onFinish() {
+                                                user.setText(null);
+                                                pass.setText(null);
+                                                Intent intent=new Intent(launch.this,profile.class);
+                                                startActivity(intent);
+                                            }
+                                        };
+                                        timer1.start();
                                     }
                                     else{
+                                        loadUser();
+                                        user.setText(null);
+                                        pass.setText(null);
                                         Intent intent=new Intent(launch.this,userRegistration.class);
                                         startActivity(intent);
                                     }
@@ -117,6 +140,8 @@ public class launch extends AppCompatActivity {
                         else{
                             Toast.makeText(launch.this,R.string.newUserSuccess, Toast.LENGTH_SHORT).show();
                             establishUser();
+                            user.setText(null);
+                            pass.setText(null);
                             Intent intent=new Intent(launch.this,userRegistration.class);
                             startActivity(intent);
                         }
@@ -125,16 +150,20 @@ public class launch extends AppCompatActivity {
     }
 
     private boolean validLogin(){
-        if ((user.getText()==null||pass.getText()==null)||((user.getText().equals("Enter email"))||(user.getText().equals("Enter password")))){
-            Toast.makeText(launch.this, "Either username or password field is empty", Toast.LENGTH_SHORT).show();
+        if (user.getText().equals("") ||user.getText().equals("Enter Email")){
+            user.setError("Username is empty.");
+            return false;
+        }
+        else if (pass.getText().equals("")||pass.getText().equals("Enter Password")){
+            pass.setError("Password is empty.");
             return false;
         }
         else if (user.getText().length()<8){
-            Toast.makeText(launch.this, "Username must be atleast 8 characters", Toast.LENGTH_SHORT).show();
+            user.setError("Username must be atleast 8 characters");
             return false;
         }
         else if (pass.getText().length()<8){
-            Toast.makeText(launch.this, "Password must be atleast 8 characters", Toast.LENGTH_SHORT).show();
+            user.setError("Password must be atleast 8 characters");
             return false;
         }
         else{
@@ -142,7 +171,6 @@ public class launch extends AppCompatActivity {
         }
     }
 
-    currentUser cU;
     private void loadUser(){
         //get firebase info pertaining to user
         id=mAuth.getCurrentUser().getUid().toString();
@@ -154,19 +182,24 @@ public class launch extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference().child("USERS").child(mAuth.getCurrentUser().getUid().toString()).child("email");
         myRef.setValue(user.getText().toString());
+        loadUser();
     }
 
     private void readValue(){
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference().child("USERS").child(id);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String firstName=dataSnapshot.child("firstName").getValue().toString();
-                String lastName=dataSnapshot.child("lastName").getValue().toString();
+                if (dataSnapshot.child("firstName").exists() && dataSnapshot.child("lastName").exists()) {
+                    String firstName = dataSnapshot.child("firstName").getValue().toString();
+                    String lastName = dataSnapshot.child("lastName").getValue().toString();
+                    currentUser.lastName=lastName;
+                    currentUser.firstName=firstName;
+                }
                 String email=dataSnapshot.child("email").getValue().toString();
-                cU=new currentUser(firstName,lastName,email);
+                currentUser.email=email;
+                currentUser.id=id;
             }
 
             @Override

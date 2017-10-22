@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".userRegistration" />
-        <activity android:name=".profile"></activity>
+        <activity android:name=".profile" />
+        <activity android:name=".playlists"></activity>
     </application>
 
 </manifest>

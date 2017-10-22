@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="#464646"
     tools:context="thacks.muse.launch">
 
   <RelativeLayout
@@ -16,23 +16,26 @@
 
       <EditText
           android:id="@+id/userPrompt"
-          android:layout_width="300dp"
+          android:layout_width="260dp"
           android:layout_height="wrap_content"
           android:hint="@string/prompt_username"
           android:textColorHint="#fff"
           android:textColor="#fff"
           android:backgroundTint="#fff"
+          android:maxLines="1"
           android:layout_below="@+id/imageView"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentStart="true"
-          android:layout_marginLeft="29dp"
-          android:layout_marginStart="29dp" />
+          android:layout_alignRight="@+id/imageView"
+          android:layout_alignEnd="@+id/imageView"
+          android:layout_marginRight="51dp"
+          android:layout_marginEnd="51dp" />
 
       <EditText
           android:id="@+id/passPrompt"
-          android:layout_width="300dp"
+          android:maxLines="1"
+          android:layout_width="260dp"
           android:layout_height="wrap_content"
           android:textColorHint="#fff"
+          android:layout_centerHorizontal="true"
           android:hint="@string/prompt_password"
           android:textColor="#fff"
           android:layout_marginTop="14dp"
@@ -42,38 +45,43 @@
           android:layout_alignStart="@+id/userPrompt"
           android:inputType="textPassword"/>
 
-      <Button
+      <ImageButton
           android:id="@+id/login"
           android:layout_width="300dp"
-          android:background="@color/colorAccent"
-          android:layout_height="wrap_content"
+          android:scaleX="0.67"
+          android:scaleY="0.67"
+          android:layout_height="60dp"
+          android:background="@drawable/login"
           android:text="@string/action_sign_in"
-          android:layout_marginTop="91dp"
+          android:layout_marginTop="52dp"
           android:layout_below="@+id/passPrompt"
-          android:layout_alignLeft="@+id/passPrompt"
-          android:layout_alignStart="@+id/passPrompt" />
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"
+          android:layout_marginLeft="33dp"
+          android:layout_marginStart="33dp" />
 
-      <Button
+      <ImageButton
           android:id="@+id/createAccount"
           android:layout_width="300dp"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="19dp"
+          android:scaleX="0.67"
+          android:scaleY="0.67"
+          android:layout_height="60dp"
+          android:background="@drawable/signup"
           android:text="@string/createAccount"
-          android:layout_centerHorizontal="true"
-          android:layout_below="@+id/login"
+          android:layout_alignTop="@+id/login"
           android:layout_alignLeft="@+id/login"
-          android:layout_alignStart="@+id/login" />
+          android:layout_alignStart="@+id/login"
+          android:layout_marginTop="44dp" />
 
       <ImageView
           android:id="@+id/imageView"
           android:scaleY="0.8"
           android:scaleX="0.8"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          app:srcCompat="@drawable/logotitle"
-          android:layout_marginTop="12dp"
-          android:layout_marginRight="28dp"
-          android:layout_marginEnd="28dp"
+          android:layout_height="260dp"
+          app:srcCompat="@drawable/muselogo"
+          android:layout_marginRight="24dp"
+          android:layout_marginEnd="24dp"
           android:layout_alignParentTop="true"
           android:layout_alignParentRight="true"
           android:layout_alignParentEnd="true" />

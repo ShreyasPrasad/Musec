@@ -1,8 +1,10 @@
 package thacks.muse;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,11 +40,21 @@ public class userRegistration extends AppCompatActivity {
 
             }
         });
+
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/moonlight.ttf");
+        firstname.setTypeface(font);
+        prompt.setTypeface(font);
+        lastname.setTypeface(font);
+        continuebutton.setTypeface(font);
     }
 
     private boolean verifyComplete(){
-        if ((firstname.getText()==null||lastname.getText()==null)||((firstname.getText().equals("Enter your first name."))||(lastname.getText().equals("Enter your last name.")))){
-            Toast.makeText(userRegistration.this, "Either first name or last name field is empty.", Toast.LENGTH_SHORT).show();
+        if (firstname.getText().equals("") ||firstname.getText().equals("Enter your first name.")){
+            firstname.setError("Field cannot be empty.");
+            return false;
+        }
+        else if (lastname.getText().equals("")||lastname.getText().equals("Enter your last name.")){
+            lastname.setError("Field cannot be empty.");
             return false;
         }
         else
@@ -57,7 +69,7 @@ public class userRegistration extends AppCompatActivity {
     private void recordData(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //set firstname in firebase database
-        DatabaseReference myRef = database.getReference().child("USERS").child(launch.id).child("firstName");
+        DatabaseReference myRef = database.getReference().child("USERS").child(currentUser.id).child("firstName");
         myRef.setValue(firstname.getText().toString());
         //set lastname in firebase database
         myRef = database.getReference().child("USERS").child(launch.id).child("lastName");
