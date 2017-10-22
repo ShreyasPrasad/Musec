@@ -27,7 +27,7 @@ public class launch extends AppCompatActivity {
     Button login, createUser;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private static String id;
+    public static String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,10 +79,27 @@ public class launch extends AppCompatActivity {
                         else{
                             Toast.makeText(launch.this, R.string.existingUserSuccess,
                                     Toast.LENGTH_SHORT).show();
-                            loadUser();
-                            Intent intent=new Intent(launch.this,profile.class);
-                            startActivity(intent);
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference().child("USERS").child(mAuth.getCurrentUser().getUid().toString()).child("firstName");
+                            myRef.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()){
+                                        loadUser();
+                                        Intent intent=new Intent(launch.this,profile.class);
+                                        startActivity(intent);
+                                    }
+                                    else{
+                                        Intent intent=new Intent(launch.this,userRegistration.class);
+                                        startActivity(intent);
+                                    }
+                                }
 
+                                @Override
+                                public void onCancelled(DatabaseError error) {
+                                    Log.d("error",error.getDetails()+"");
+                                }
+                            });
                         }
                     }
                 });
@@ -110,6 +127,14 @@ public class launch extends AppCompatActivity {
     private boolean validLogin(){
         if ((user.getText()==null||pass.getText()==null)||((user.getText().equals("Enter email"))||(user.getText().equals("Enter password")))){
             Toast.makeText(launch.this, "Either username or password field is empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (user.getText().length()<8){
+            Toast.makeText(launch.this, "Username must be atleast 8 characters", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (pass.getText().length()<8){
+            Toast.makeText(launch.this, "Password must be atleast 8 characters", Toast.LENGTH_SHORT).show();
             return false;
         }
         else{
@@ -141,7 +166,6 @@ public class launch extends AppCompatActivity {
                 String firstName=dataSnapshot.child("firstName").getValue().toString();
                 String lastName=dataSnapshot.child("lastName").getValue().toString();
                 String email=dataSnapshot.child("email").getValue().toString();
-                Log.d("msg:",firstName+"");
                 cU=new currentUser(firstName,lastName,email);
             }
 
