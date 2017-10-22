@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="thacks.muse.playlists">
-<RelativeLayout
+
+    <RelativeLayout
     android:layout_width="344dp"
     android:layout_height="551dp"
     tools:layout_editor_absoluteY="8dp"
@@ -16,19 +17,23 @@
         android:id="@+id/title3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#7482bf"
+        android:textSize="17dp"
         android:text="View Your Recommended Playlists"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
     </TextView>
 
-    <LinearLayout
+    <ListView
         android:id="@+id/container"
-        android:layout_width="9dp"
-        android:layout_height="551dp">
-
-    </LinearLayout>
+        android:background="#7482BF"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/title3"
+        android:layout_marginTop="22dp" />
 
 
 </RelativeLayout>

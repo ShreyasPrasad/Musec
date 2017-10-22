@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@color/colorPrimary">
+
+    <Spinner
+	    android:id="@+id/muses_spinner"
+		android:textColor="#fff"
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/refresh"
+			android:background="@color/colorAccent"
+			android:textColor="#fff"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="@string/refresh" />
+	    <Button
+	        android:id="@+id/connect"
+			android:background="@color/colorAccent"
+			android:textColor="#fff"
+	        android:layout_width="100dp"
+	        android:layout_height="40dp"
+	        android:text="@string/connect" />
+	    <Button
+	        android:id="@+id/disconnect"
+			android:background="@color/colorAccent"
+			android:textColor="#fff"
+	        android:layout_width="120dp"
+	        android:layout_height="40dp"
+	        android:text="@string/disconnect" />
+	</LinearLayout>
+
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="match_parent"
+		android:layout_height="57dp"
+		android:textColor="#fff"
+		android:text="@string/status"
+		android:textSize="16sp" />
+
+	<TextView
+    	android:id="@+id/con_status"
+		android:textColor="#fff"
+   		android:layout_width="match_parent"
+    	android:layout_height="72dp"
+		android:textSize="16sp"
+    	android:text="@string/undefined" />
+
+	<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="45dp"
+	        android:orientation="horizontal" >
+	        <Button
+	            android:id="@+id/pause"
+				android:background="@color/colorAccent"
+				android:textColor="#fff"
+	            android:layout_width="150dp"
+	            android:layout_height="40dp"
+	            android:text="@string/pause" />
+			<Button
+				android:id="@+id/startmuse"
+				android:background="#7482BF"
+				android:textColor="#fff"
+				android:layout_width="150dp"
+				android:layout_height="40dp"
+				android:text="Start Test" />
+
+
+		</LinearLayout>
+
+</LinearLayout>

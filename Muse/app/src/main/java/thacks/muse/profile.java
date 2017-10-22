@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class profile extends AppCompatActivity {
 
-    Button playlist, muse, tests;
+    Button playlist, tests;
     ImageView title, profilepic;
     TextView userPrompt;
     @Override
@@ -27,7 +27,6 @@ public class profile extends AppCompatActivity {
 
         //init all buttons
         playlist=(Button)findViewById(R.id.playlists);
-        muse=(Button)findViewById(R.id.connectmuse);
         tests=(Button)findViewById(R.id.musictests);
 
         //actions for all buttons
@@ -39,17 +38,12 @@ public class profile extends AppCompatActivity {
             }
         });
 
-        muse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         tests.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(profile.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -59,7 +53,6 @@ public class profile extends AppCompatActivity {
         //set fonts
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/moonlight.ttf");
         playlist.setTypeface(font);
-        muse.setTypeface(font);
         tests.setTypeface(font);
         userPrompt.setTypeface(font);
     }

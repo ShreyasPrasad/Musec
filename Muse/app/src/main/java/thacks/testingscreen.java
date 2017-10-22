@@ -2,8 +2,8 @@
  * Example of using libmuse library on android.
  * Interaxon, Inc. 2016
  */
-
-package com.choosemuse.example.libmuse;
+package thacks.muse;
+//package com.choosemuse.example.libmuse;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -38,6 +38,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
@@ -55,13 +56,42 @@ import android.bluetooth.BluetoothAdapter;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
-public class MainActivity extends Activity implements OnClickListener {
+/**
+ * This example will illustrate how to connect to a Muse headband,
+ * register for and receive EEG data and disconnect from the headband.
+ * Saving EEG data to a .muse file is also covered.
+ *
+ * For instructions on how to pair your headband with your Android device
+ * please see:
+ * http://developer.choosemuse.com/hardware-firmware/bluetooth-connectivity/developer-sdk-bluetooth-connectivity-2
+ *
+ * Usage instructions:
+ * 1. Pair your headband if necessary.
+ * 2. Run this project.
+ * 3. Turn on the Muse headband.
+ * 4. Press "Refresh". It should display all paired Muses in the Spinner drop down at the
+ *    top of the screen.  It may take a few seconds for the headband to be detected.
+ * 5. Select the headband you want to connect to and press "Connect".
+ * 6. You should see EEG and accelerometer data as well as connection status,
+ *    version information and relative alpha values appear on the screen.
+ * 7. You can pause/resume data transmission with the button at the bottom of the screen.
+ * 8. To disconnect from the headband, press "Disconnect"
+ */
+public class testingscreen extends Activity implements OnClickListener {
 
     /**
      * Tag used for logging purposes.
      */
+    int ii = 0;
+    double country [][] = new double [25][4];
+    double hiphop [][] = new double [25][4];
+    double pop [][] = new double [25][4];
+    double edm [][] = new double [25][4];
+    double rnb [][] = new double [25][4];
+    double classical [][] = new double [25][4];
+    int musicInt = 0;
     private final String TAG = "TestLibMuseAndroid";
-
+    boolean connect = false;
     /**
      * The MuseManager is how you detect Muse headbands and receive notifications
      * when the list of available headbands changes.
@@ -151,7 +181,7 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_testingscreen);
         // We need to set the context on MuseManagerAndroid before we can do anything.
         // This must come before other LibMuse API calls as it also loads the library.
         manager = MuseManagerAndroid.getInstance();
@@ -159,8 +189,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
         Log.i(TAG, "LibMuse version=" + LibmuseVersion.instance().getString());
 
-        WeakReference<MainActivity> weakActivity =
-                new WeakReference<MainActivity>(this);
+        WeakReference<testingscreen> weakActivity =
+                new WeakReference<testingscreen>(this);
         // Register a listener to receive connection state changes.
         connectionListener = new ConnectionListener(weakActivity);
         // Register a listener to receive data from a Muse.
@@ -182,8 +212,8 @@ public class MainActivity extends Activity implements OnClickListener {
         // This is only needed if you want to do File I/O.
         fileThread.start();
 
-        // Start our asynchronous updates of the UI.
-        handler.post(tickUi);
+
+
     }
 
     protected void onPause() {
@@ -219,14 +249,13 @@ public class MainActivity extends Activity implements OnClickListener {
 
             List<Muse> availableMuses = manager.getMuses();
             Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
-
             // Check that we actually have something to connect to.
+
             if (availableMuses.size() < 1 || musesSpinner.getAdapter().getCount() < 1) {
                 Log.w(TAG, "There is nothing to connect to");
             } else {
 
                 // Cache the Muse that the user has selected.
-                muse = availableMuses.get(musesSpinner.getSelectedItemPosition());
                 // Unregister all prior listeners and register our data listener to
                 // receive the MuseDataPacketTypes we are interested in.  If you do
                 // not register a listener for a particular data type, you will not
@@ -234,6 +263,8 @@ public class MainActivity extends Activity implements OnClickListener {
                 muse.unregisterAllListeners();
                 muse.registerConnectionListener(connectionListener);
                 muse.registerDataListener(dataListener, MuseDataPacketType.EEG);
+                muse.registerDataListener(dataListener, MuseDataPacketType.ALPHA_RELATIVE);
+                muse.registerDataListener(dataListener, MuseDataPacketType.ACCELEROMETER);
                 muse.registerDataListener(dataListener, MuseDataPacketType.BATTERY);
                 muse.registerDataListener(dataListener, MuseDataPacketType.DRL_REF);
                 muse.registerDataListener(dataListener, MuseDataPacketType.QUANTIZATION);
@@ -259,6 +290,9 @@ public class MainActivity extends Activity implements OnClickListener {
                 dataTransmission = !dataTransmission;
                 muse.enableDataTransmission(dataTransmission);
             }
+        }
+        else if (v.getId()==R.id.startmusic){
+            handler.post(tickUi);
         }
     }
 
@@ -288,7 +322,7 @@ public class MainActivity extends Activity implements OnClickListener {
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which){
                             dialog.dismiss();
-                            ActivityCompat.requestPermissions(MainActivity.this,
+                            ActivityCompat.requestPermissions(testingscreen.this,
                                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                                     0);
                         }
@@ -342,22 +376,8 @@ public class MainActivity extends Activity implements OnClickListener {
             @Override
             public void run() {
 
-                final TextView statusText = (TextView) findViewById(R.id.con_status);
-                statusText.setText(status);
 
-                final MuseVersion museVersion = muse.getMuseVersion();
-                final TextView museVersionText = (TextView) findViewById(R.id.version);
-                // If we haven't yet connected to the headband, the version information
-                // will be null.  You have to connect to the headband before either the
-                // MuseVersion or MuseConfiguration information is known.
-                if (museVersion != null) {
-                    final String version = museVersion.getFirmwareType() + " - "
-                            + museVersion.getFirmwareVersion() + " - "
-                            + museVersion.getProtocolVersion();
-                    museVersionText.setText(version);
-                } else {
-                    museVersionText.setText(R.string.undefined);
-                }
+
             }
         });
 
@@ -367,6 +387,10 @@ public class MainActivity extends Activity implements OnClickListener {
             saveFile();
             // We have disconnected from the headband, so set our cached copy to null.
             this.muse = null;
+            connect = false;
+        }
+        if(current == ConnectionState.CONNECTED){
+            connect = true;
         }
     }
 
@@ -388,6 +412,16 @@ public class MainActivity extends Activity implements OnClickListener {
                 getEegChannelValues(eegBuffer,p);
                 eegStale = true;
                 break;
+//            case ACCELEROMETER:
+//                assert(accelBuffer.length >= n);
+//                getAccelValues(p);
+//                accelStale = true;
+//                break;
+//            case ALPHA_RELATIVE:
+//                assert(alphaBuffer.length >= n);
+//                getEegChannelValues(alphaBuffer,p);
+//                alphaStale = true;
+//                break;
             case BATTERY:
             case DRL_REF:
             case QUANTIZATION:
@@ -424,6 +458,14 @@ public class MainActivity extends Activity implements OnClickListener {
         buffer[4] = p.getEegChannelValue(Eeg.AUX_LEFT);
         buffer[5] = p.getEegChannelValue(Eeg.AUX_RIGHT);
     }
+
+//    private void getAccelValues(MuseDataPacket p) {
+//        accelBuffer[0] = p.getAccelerometerValue(Accelerometer.X);
+//        accelBuffer[1] = p.getAccelerometerValue(Accelerometer.Y);
+//        accelBuffer[2] = p.getAccelerometerValue(Accelerometer.Z);
+//    }
+
+
     //--------------------------------------
     // UI Specific methods
 
@@ -431,7 +473,6 @@ public class MainActivity extends Activity implements OnClickListener {
      * Initializes the UI of the example application.
      */
     private void initUI() {
-        setContentView(R.layout.activity_main);
         Button refreshButton = (Button) findViewById(R.id.refresh);
         refreshButton.setOnClickListener(this);
         Button connectButton = (Button) findViewById(R.id.connect);
@@ -440,28 +481,34 @@ public class MainActivity extends Activity implements OnClickListener {
         disconnectButton.setOnClickListener(this);
         Button pauseButton = (Button) findViewById(R.id.pause);
         pauseButton.setOnClickListener(this);
+        TextView title=(TextView)findViewById(R.id.title4);
+
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/moonlight.ttf");
+        refreshButton.setTypeface(font);
+        connectButton.setTypeface(font);
+        disconnectButton.setTypeface(font);
+        pauseButton.setTypeface(font);
+        title.setTypeface(font);
 
         spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
         musesSpinner.setAdapter(spinnerAdapter);
     }
 
-    /**
-     * The runnable that is used to update the UI at 60Hz.
-     *
-     * We update the UI from this Runnable instead of in packet handlers
-     * because packets come in at high frequency -- 220Hz or more for raw EEG
-     * -- and it only makes sense to update the UI at about 60fps. The update
-     * functions do some string allocation, so this reduces our memory
-     * footprint and makes GC pauses less frequent/noticeable.
-     */
     private final Runnable tickUi = new Runnable() {
+
         @Override
         public void run() {
-            if (eegStale) {
-                updateEeg();
-            }
-            handler.postDelayed(tickUi, 1000 / 300);
+
+                    updateEeg(ii);
+                    ii++;
+                    if (ii == 24) {
+                        musicInt++;
+                        ii = 0;
+                    }
+                    if(musicInt < 6)
+                    handler.postDelayed(tickUi, 500);
+
         }
     };
 
@@ -469,16 +516,144 @@ public class MainActivity extends Activity implements OnClickListener {
      * The following methods update the TextViews in the UI with the data
      * from the buffers.
      */
+    private void updateEeg(int ii) {
 
-    private void updateEeg() {
-        TextView tp9 = (TextView)findViewById(R.id.eeg_tp9);
-        TextView fp1 = (TextView)findViewById(R.id.eeg_af7);
-        TextView fp2 = (TextView)findViewById(R.id.eeg_af8);
-        TextView tp10 = (TextView)findViewById(R.id.eeg_tp10);
-        tp9.setText(String.format("%6.2f", eegBuffer[0]));
-        fp1.setText(String.format("%6.2f", eegBuffer[1]));
-        fp2.setText(String.format("%6.2f", eegBuffer[2]));
-        tp10.setText(String.format("%6.2f", eegBuffer[3]));
+        Log.i("amessage", "Made it here");
+        switch(musicInt){
+            case 0:
+                Log.i("amessage", musicInt+"Made it to hiphop:"+ ii);
+                hiphop[ii][0] = eegBuffer[0];
+                hiphop[ii][1] = eegBuffer[1];
+                hiphop[ii][2] = eegBuffer[2];
+                hiphop[ii][3] = eegBuffer[3];
+                Log.i("amessage", hiphop[ii][3] + "");
+                break;
+            case 1:
+                Log.i("amessage", musicInt+"Made it to pop:"+ ii);
+                pop[ii][0] = eegBuffer[0];
+                pop[ii][1] = eegBuffer[1];
+                pop[ii][2] = eegBuffer[2];
+                pop[ii][3] = eegBuffer[3];
+                Log.i("amessage", pop[ii][3] + "");
+                break;
+            case 2:
+                Log.i("amessage", musicInt+"Made it to pop:"+ ii);
+                country[ii][0] = eegBuffer[0];
+                country[ii][1] = eegBuffer[1];
+                country[ii][2] = eegBuffer[2];
+                country[ii][3] = eegBuffer[3];
+                Log.i("amessage", country[ii][3] + "");
+                break;
+            case 3:
+                Log.i("amessage", musicInt+"Made it to pop:"+ ii);
+                edm[ii][0] = eegBuffer[0];
+                edm[ii][1] = eegBuffer[1];
+                edm[ii][2] = eegBuffer[2];
+                edm[ii][3] = eegBuffer[3];
+                Log.i("amessage", edm[ii][3]+ "");
+                break;
+            case 4:
+                Log.i("amessage", musicInt+"Made it to pop:"+ ii);
+                rnb[ii][0] = eegBuffer[0];
+                rnb[ii][1] = eegBuffer[1];
+                rnb[ii][2] = eegBuffer[2];
+                rnb[ii][3] = eegBuffer[3];
+                Log.i("amessage", rnb[ii][3]+ "");
+                break;
+            case 5:
+                Log.i("amessage", musicInt+"Made it to classical");
+                classical[ii][0] = eegBuffer[0];
+                classical[ii][1] = eegBuffer[1];
+                classical[ii][2] = eegBuffer[2];
+                classical[ii][3] = eegBuffer[3];
+                Log.i("amessage", classical[ii][3] + "");
+                break;
+        }
+        }
+
+    public int averageDB() {
+        int hiphopSum = 0;
+        int popSum = 0;
+        int countrySum = 0;
+        int rnbSum = 0;
+        int edmSum = 0;
+        int classicalSum = 0;
+        int averages[] = new int[6];
+        //Hip-Hop
+        for (int j = 0; j < hiphop.length; j++) {
+            hiphopSum += hiphop[j][0];
+            hiphopSum += hiphop[j][1];
+            hiphopSum += hiphop[j][2];
+            hiphopSum += hiphop[j][3];
+        }
+        averages[0] = hiphopSum / (hiphop.length * 4);
+        //Pop
+        for (int j = 0; j < pop.length; j++) {
+            popSum += pop[j][0];
+            popSum += pop[j][1];
+            popSum += pop[j][2];
+            popSum += pop[j][3];
+        }
+        averages[1]  = popSum / (pop.length * 4);
+        //Country
+        for (int j = 0; j < country.length; j++) {
+            countrySum += country[j][0];
+            countrySum += country[j][1];
+            countrySum += country[j][2];
+            countrySum += country[j][3];
+        }
+        averages[2]  = countrySum / (country.length * 4);
+        //rnb
+        for (int j = 0; j < rnb.length; j++) {
+            rnbSum += rnb[j][0];
+            rnbSum += rnb[j][1];
+            rnbSum += rnb[j][2];
+            rnbSum += rnb[j][3];
+        }
+        averages[3]  = rnbSum / (rnb.length * 4);
+        //edm
+        for (int j = 0; j < edm.length; j++) {
+            edmSum += edm[j][0];
+            edmSum += edm[j][1];
+            edmSum += edm[j][2];
+            edmSum += edm[j][3];
+        }
+        averages[4]  = edmSum / (edm.length * 4);
+        //classical
+        for (int j = 0; j < classical.length; j++) {
+            classicalSum += classical[j][0];
+            classicalSum += classical[j][1];
+            classicalSum += classical[j][2];
+            classicalSum += classical[j][3];
+        }
+        averages[5]  = classicalSum / (classical.length * 4);
+        for (int k = 0;k<averages.length;k++){
+            Log.i("Success!", "Value is"+averages[k]);
+        }
+        int minValue = 0;
+        for (int i = 1; i < averages.length; i++) {
+            if (averages[i] < minValue) {
+                minValue = i;
+            }
+        }
+        return minValue;
+    }
+
+    public String bestMusic(int musicNum) {
+        String bestMusic = "";
+        if (musicNum == 0)
+            bestMusic = "hiphop";
+        else if (musicNum == 1)
+            bestMusic = "pop";
+        else if (musicNum == 2)
+            bestMusic = "country";
+        else if (musicNum == 3)
+            bestMusic = "rnb";
+        else if (musicNum == 4)
+            bestMusic = "edm";
+        else if (musicNum == 5)
+            bestMusic = "classical";
+        return bestMusic;
     }
 
 
@@ -585,7 +760,9 @@ public class MainActivity extends Activity implements OnClickListener {
                 // are stored as MUSE_ELEMENTS messages.
                 case EEG:
                 case BATTERY:
+                case ACCELEROMETER:
                 case QUANTIZATION:
+                case GYRO:
                 case MUSE_ELEMENTS:
                     MuseDataPacket packet = fileReader.getDataPacket();
                     Log.i(tag, "data packet: " + packet.packetType().toString());
@@ -617,9 +794,9 @@ public class MainActivity extends Activity implements OnClickListener {
     // Each of these classes extend from the appropriate listener and contain a weak reference
     // to the activity.  Each class simply forwards the messages it receives back to the Activity.
     class MuseL extends MuseListener {
-        final WeakReference<MainActivity> activityRef;
+        final WeakReference<testingscreen> activityRef;
 
-        MuseL(final WeakReference<MainActivity> activityRef) {
+        MuseL(final WeakReference<testingscreen> activityRef) {
             this.activityRef = activityRef;
         }
 
@@ -630,9 +807,9 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     class ConnectionListener extends MuseConnectionListener {
-        final WeakReference<MainActivity> activityRef;
+        final WeakReference<testingscreen> activityRef;
 
-        ConnectionListener(final WeakReference<MainActivity> activityRef) {
+        ConnectionListener(final WeakReference<testingscreen> activityRef) {
             this.activityRef = activityRef;
         }
 
@@ -643,9 +820,9 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     class DataListener extends MuseDataListener {
-        final WeakReference<MainActivity> activityRef;
+        final WeakReference<testingscreen> activityRef;
 
-        DataListener(final WeakReference<MainActivity> activityRef) {
+        DataListener(final WeakReference<testingscreen> activityRef) {
             this.activityRef = activityRef;
         }
 
