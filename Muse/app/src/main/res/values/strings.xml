@@ -21,7 +21,7 @@
     <string name="eeg">EEG data:</string>
     <string name="accel">Accelerometer Data:</string>
     <string name="version">Version:</string>
-    <string name="undefined">unknown</string>
+    <string name="undefined">N/A</string>
     <string name="artifacts">Blinks, Jaw: </string>
     <string name="msg_count">Msg number, size: </string>
     <string name="pause">Pause/Resume</string>

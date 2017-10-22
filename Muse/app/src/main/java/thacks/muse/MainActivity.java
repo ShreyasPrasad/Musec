@@ -35,7 +35,9 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
@@ -45,6 +47,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.bluetooth.BluetoothAdapter;
@@ -88,6 +91,7 @@ public class MainActivity extends Activity implements OnClickListener {
     double classical [][] = new double [25][4];
     int musicInt = 0;
     private final String TAG = "TestLibMuseAndroid";
+    ImageView img;
     boolean connect = false;
     /**
      * The MuseManager is how you detect Muse headbands and receive notifications
@@ -289,6 +293,10 @@ public class MainActivity extends Activity implements OnClickListener {
                 dataTransmission = !dataTransmission;
                 muse.enableDataTransmission(dataTransmission);
             }
+        }
+        else{
+            Intent musicplayer = new Intent (this, musichandler.class);
+            startService(musicplayer);
         }
     }
 
@@ -492,10 +500,21 @@ public class MainActivity extends Activity implements OnClickListener {
         disconnectButton.setOnClickListener(this);
         Button pauseButton = (Button) findViewById(R.id.pause);
         pauseButton.setOnClickListener(this);
+        Button startmuse=(Button)findViewById(R.id.startmuse);
+        startmuse.setOnClickListener(this);
 
         spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
         Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
         musesSpinner.setAdapter(spinnerAdapter);
+
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/moonlight.ttf");
+        refreshButton.setTypeface(font);
+        connectButton.setTypeface(font);
+        disconnectButton.setTypeface(font);
+        pauseButton.setTypeface(font);
+        startmuse.setTypeface(font);
+
+
     }
 
     /**
