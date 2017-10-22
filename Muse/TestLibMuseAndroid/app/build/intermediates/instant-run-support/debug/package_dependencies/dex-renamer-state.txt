@@ -1,0 +1,25 @@
+#Sat Oct 21 16:47:47 EDT 2017
+renamed.7=classes7.dex
+renamed.6=classes8.dex
+renamed.5=classes5.dex
+renamed.4=classes.dex
+renamed.3=classes2.dex
+renamed.2=classes4.dex
+renamed.1=classes3.dex
+renamed.0=classes6.dex
+base.7=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-25.3.1_2a2a0753f52e1a3bb8f99d23bd27196cb1afe328
+base.6=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\libmuse_android_3326d28b00c80d4eccd390b63a241c1488f05e10
+base.5=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5ee1edbcc190b00246cf55a89441ef561f16f836
+base.4=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_0612968e31b9436d4f17fef0eeff1fee13c20fea
+base.3=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_16639131610abd6659944ccdb4d11b41d38c5913
+base.2=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_4f3bd0aa0ee293d3999e824ec2d06eb299d83292
+base.1=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_3b7af615742f8f6acc37b01a04249e36a41c8b7b
+base.0=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_e3e6d728424ab78eb772575a3fc2fa4ac7bca8ec
+file.7=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-25.3.1_2a2a0753f52e1a3bb8f99d23bd27196cb1afe328\\classes.dex
+file.6=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\libmuse_android_3326d28b00c80d4eccd390b63a241c1488f05e10\\classes.dex
+file.5=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5ee1edbcc190b00246cf55a89441ef561f16f836\\classes.dex
+file.4=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_0612968e31b9436d4f17fef0eeff1fee13c20fea\\classes.dex
+file.3=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_16639131610abd6659944ccdb4d11b41d38c5913\\classes.dex
+file.2=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_4f3bd0aa0ee293d3999e824ec2d06eb299d83292\\classes.dex
+file.1=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_3b7af615742f8f6acc37b01a04249e36a41c8b7b\\classes.dex
+file.0=C\:\\Users\\Maanav\\libmuse_6.0.2\\android\\examples\\TestLibMuseAndroid\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_e3e6d728424ab78eb772575a3fc2fa4ac7bca8ec\\classes.dex

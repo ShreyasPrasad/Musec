@@ -461,7 +461,7 @@ public class MainActivity extends Activity implements OnClickListener {
             if (eegStale) {
                 updateEeg();
             }
-            handler.postDelayed(tickUi, 1000 / 60);
+            handler.postDelayed(tickUi, 1000 / 300);
         }
     };
 
