@@ -213,7 +213,8 @@ public class MainActivity extends Activity implements OnClickListener {
         fileThread.start();
 
         // Start our asynchronous updates of the UI.
-        handler.post(tickUi);
+
+//        handler.post(tickUi);
     }
 
     protected void onPause() {
@@ -246,7 +247,7 @@ public class MainActivity extends Activity implements OnClickListener {
             // which headband the user wants to connect to we can stop
             // listening for other headbands.
             manager.stopListening();
-
+            handler.post(tickUi);
             List<Muse> availableMuses = manager.getMuses();
             Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
 
@@ -513,14 +514,16 @@ public class MainActivity extends Activity implements OnClickListener {
 
         @Override
         public void run() {
-                if (connect)
+
                     updateEeg(ii);
-                ii++;
-                if (ii == 24){
-                    musicInt++;
-                    ii=0;
-                }
-            handler.postDelayed(tickUi, 500);
+                    ii++;
+                    if (ii == 24) {
+                        musicInt++;
+                        ii = 0;
+                    }
+                    if(musicInt < 6)
+                    handler.postDelayed(tickUi, 500);
+
         }
     };
 
@@ -554,6 +557,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 hiphop[ii][1] = eegBuffer[1];
                 hiphop[ii][2] = eegBuffer[2];
                 hiphop[ii][3] = eegBuffer[3];
+                Log.i("amessage", hiphop[ii][3] + "");
                 break;
             case 1:
                 Log.i("amessage", musicInt+"Made it to pop:"+ ii);
@@ -561,6 +565,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 pop[ii][1] = eegBuffer[1];
                 pop[ii][2] = eegBuffer[2];
                 pop[ii][3] = eegBuffer[3];
+                Log.i("amessage", pop[ii][3] + "");
                 break;
             case 2:
                 Log.i("amessage", musicInt+"Made it to pop:"+ ii);
@@ -568,6 +573,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 country[ii][1] = eegBuffer[1];
                 country[ii][2] = eegBuffer[2];
                 country[ii][3] = eegBuffer[3];
+                Log.i("amessage", country[ii][3] + "");
                 break;
             case 3:
                 Log.i("amessage", musicInt+"Made it to pop:"+ ii);
@@ -575,6 +581,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 edm[ii][1] = eegBuffer[1];
                 edm[ii][2] = eegBuffer[2];
                 edm[ii][3] = eegBuffer[3];
+                Log.i("amessage", edm[ii][3]+ "");
                 break;
             case 4:
                 Log.i("amessage", musicInt+"Made it to pop:"+ ii);
@@ -582,6 +589,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 rnb[ii][1] = eegBuffer[1];
                 rnb[ii][2] = eegBuffer[2];
                 rnb[ii][3] = eegBuffer[3];
+                Log.i("amessage", rnb[ii][3]+ "");
                 break;
             case 5:
                 Log.i("amessage", musicInt+"Made it to classical");
@@ -589,6 +597,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 classical[ii][1] = eegBuffer[1];
                 classical[ii][2] = eegBuffer[2];
                 classical[ii][3] = eegBuffer[3];
+                Log.i("amessage", classical[ii][3] + "");
                 break;
         }
         }

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/estherlee/THacks2/TestLibMuseAndroid/app/src/debug/shaders"/></dataSet></merger>

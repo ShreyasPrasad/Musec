@@ -1,126 +1,96 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:2:1-34:12
 	package
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:3:5-45
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:3:5-45
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:5:5-30
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
 	android:versionCode
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:4:5-28
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:7:5-81
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:7:22-78
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:8:5-68
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:8:5-68
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:8:22-65
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:8:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:9:5-74
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:9:5-74
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:9:22-71
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:9:22-71
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:10:5-81
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:10:5-81
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:10:22-78
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:10:22-78
 uses-sdk
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:13:5-15:41
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:21:5-23:58
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:13:5-15:41
+MERGED from [com.android.support:support-v4:25.3.1] /Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/estherlee/.android/build-cache/b50c40b247ba8d062da8c0ba9e06d70fa7a6d711/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/estherlee/.android/build-cache/81415ae812beb20994d00aa33119944459952762/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/estherlee/.android/build-cache/42bff68040885f40f9fdb90c03e84a6cb0403a1d/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/estherlee/.android/build-cache/07e090a54f6f7289b806259bbd0c550bb733ceac/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /Users/estherlee/.android/build-cache/6d51cc7f089724cc8174d8858144490b3190f5f2/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:23:9-51
+		ADDED from [com.android.support:support-v4:25.3.1] /Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:15:9-38
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:15:9-38
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:14:9-35
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:14:9-35
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml
 application
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:17:5-32:19
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:29:5-20
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:17:5-32:19
+MERGED from [com.android.support:support-v4:25.3.1] /Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/estherlee/.android/build-cache/b50c40b247ba8d062da8c0ba9e06d70fa7a6d711/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/estherlee/.android/build-cache/81415ae812beb20994d00aa33119944459952762/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/estherlee/.android/build-cache/42bff68040885f40f9fdb90c03e84a6cb0403a1d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/estherlee/.android/build-cache/07e090a54f6f7289b806259bbd0c550bb733ceac/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /Users/estherlee/.android/build-cache/6d51cc7f089724cc8174d8858144490b3190f5f2/output/AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:20:9-41
 	android:allowBackup
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:18:9-35
 	android:icon
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:19:9-45
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:19:9-45
 	android:theme
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:21:9-40
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:21:9-40
 activity#com.choosemuse.example.libmuse.MainActivity
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:22:9-31:20
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:22:9-31:20
 	android:screenOrientation
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:24:13-49
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:24:13-49
 	android:label
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:25:13-45
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:25:13-45
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:23:13-71
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:23:13-71
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:26:13-30:29
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from /Users/estherlee/THacks2/TestLibMuseAndroid/app/src/main/AndroidManifest.xml:29:27-74
 meta-data#android.support.VERSION
-ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:support-v4:25.3.1] /Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/estherlee/.android/build-cache/b50c40b247ba8d062da8c0ba9e06d70fa7a6d711/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/estherlee/.android/build-cache/81415ae812beb20994d00aa33119944459952762/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/estherlee/.android/build-cache/42bff68040885f40f9fdb90c03e84a6cb0403a1d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/estherlee/.android/build-cache/07e090a54f6f7289b806259bbd0c550bb733ceac/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /Users/estherlee/.android/build-cache/6d51cc7f089724cc8174d8858144490b3190f5f2/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:support-v4:25.3.1] /Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:support-v4:25.3.1] C:\Users\Maanav\libmuse_6.0.2\android\examples\TestLibMuseAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:support-v4:25.3.1] /Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/AndroidManifest.xml:26:9-47
