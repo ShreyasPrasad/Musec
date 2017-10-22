@@ -38,6 +38,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
@@ -55,6 +57,7 @@ import android.bluetooth.BluetoothAdapter;
 
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.widget.Toast;
 
 /**
  * This example will illustrate how to connect to a Muse headband,
@@ -83,15 +86,17 @@ public class MainActivity extends Activity implements OnClickListener {
      * Tag used for logging purposes.
      */
     int ii = 0;
-    double country [][] = new double [25][4];
-    double hiphop [][] = new double [25][4];
-    double pop [][] = new double [25][4];
-    double edm [][] = new double [25][4];
-    double rnb [][] = new double [25][4];
-    double classical [][] = new double [25][4];
+    double country [][] = new double [200][4];
+    double hiphop [][] = new double [200][4];
+    double pop [][] = new double [200][4];
+    double edm [][] = new double [200][4];
+    double rnb [][] = new double [200][4];
+    double classical [][] = new double [200][4];
+    private String url;
     int musicInt = 0;
     private final String TAG = "TestLibMuseAndroid";
-    ImageView img;
+    ImageView album;
+    TextView view1, view2;
     boolean connect = false;
     /**
      * The MuseManager is how you detect Muse headbands and receive notifications
@@ -248,7 +253,7 @@ public class MainActivity extends Activity implements OnClickListener {
             // which headband the user wants to connect to we can stop
             // listening for other headbands.
             manager.stopListening();
-            handler.post(tickUi);
+
             List<Muse> availableMuses = manager.getMuses();
             Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
 
@@ -284,19 +289,25 @@ public class MainActivity extends Activity implements OnClickListener {
                 muse.disconnect();
             }
 
-        } else if (v.getId() == R.id.pause) {
-
-            // The user has pressed the "Pause/Resume" button to either pause or
-            // resume data transmission.  Toggle the state and pause or resume the
-            // transmission on the headband.
-            if (muse != null) {
-                dataTransmission = !dataTransmission;
-                muse.enableDataTransmission(dataTransmission);
+        }
+        else if (v.getId() == R.id.album){
+            if (musicInt<6){
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
             }
         }
-        else{
-            Intent musicplayer = new Intent (this, musichandler.class);
-            startService(musicplayer);
+        else {
+            if (connect){
+                handler.post(tickUi);
+                Intent musicplayer = new Intent (this, musichandler.class);
+                startService(musicplayer);
+            }
+            else{
+                Toast.makeText(MainActivity.this,"You must connect to a device first.",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -498,8 +509,6 @@ public class MainActivity extends Activity implements OnClickListener {
         connectButton.setOnClickListener(this);
         Button disconnectButton = (Button) findViewById(R.id.disconnect);
         disconnectButton.setOnClickListener(this);
-        Button pauseButton = (Button) findViewById(R.id.pause);
-        pauseButton.setOnClickListener(this);
         Button startmuse=(Button)findViewById(R.id.startmuse);
         startmuse.setOnClickListener(this);
 
@@ -507,14 +516,21 @@ public class MainActivity extends Activity implements OnClickListener {
         Spinner musesSpinner = (Spinner) findViewById(R.id.muses_spinner);
         musesSpinner.setAdapter(spinnerAdapter);
 
+        //album image for switch
+        album=(ImageView)findViewById(R.id.album);
+        album.setOnClickListener(this);
+
+        //textviews
+        view1=(TextView)findViewById(R.id.textView);
+        view2=(TextView)findViewById(R.id.con_status);
+
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/moonlight.ttf");
         refreshButton.setTypeface(font);
         connectButton.setTypeface(font);
         disconnectButton.setTypeface(font);
-        pauseButton.setTypeface(font);
         startmuse.setTypeface(font);
-
-
+        view1.setTypeface(font);
+        view2.setTypeface(font);
     }
 
     /**
@@ -533,13 +549,16 @@ public class MainActivity extends Activity implements OnClickListener {
 
                     updateEeg(ii);
                     ii++;
-                    if (ii == 24) {
+                    if (ii == 200) {
                         musicInt++;
                         ii = 0;
                     }
-                    if(musicInt < 6)
-                    handler.postDelayed(tickUi, 500);
-
+                    if(musicInt < 6){
+                        handler.postDelayed(tickUi, 100);
+                    }
+                    else{
+                        bestMusic(averageDB());
+                    }
         }
     };
 
@@ -552,7 +571,6 @@ public class MainActivity extends Activity implements OnClickListener {
 //        TextView acc_y = (TextView)findViewById(R.id.acc_y);
 //        TextView acc_z = (TextView)findViewById(R.id.acc_z);
 //        acc_x.setText(String.format("%6.2f", accelBuffer[0]));
-//        acc_y.setText(String.format("%6.2f", accelBuffer[1]));
 //        acc_z.setText(String.format("%6.2f", accelBuffer[2]));
 //    }
 
@@ -685,23 +703,41 @@ public class MainActivity extends Activity implements OnClickListener {
         return minValue;
     }
 
-    public String bestMusic(int musicNum) {
-        String bestMusic = "";
+    public void bestMusic(int musicNum) {
+        String result="HipHop";
+        url="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWY6tYEFs22tT";
         if (musicNum == 0)
-            bestMusic = "hiphop";
-        else if (musicNum == 1)
-            bestMusic = "pop";
-        else if (musicNum == 2)
-            bestMusic = "country";
-        else if (musicNum == 3)
-            bestMusic = "rnb";
-        else if (musicNum == 4)
-            bestMusic = "edm";
-        else if (musicNum == 5)
-            bestMusic = "classical";
-        return bestMusic;
-    }
+            album.setBackgroundResource(R.drawable.hiphop);
+        else if (musicNum == 1){
+            album.setBackgroundResource(R.drawable.pop);
+            result="Pop";
+            url="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DXbpmT3HUTsZm";
+        }
+        else if (musicNum == 2){
+            result="Country";
+            album.setBackgroundResource(R.drawable.country);
+            url="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWSK8os4XIQBk";
+        }
 
+        else if (musicNum == 3){
+            result="RnB";
+            album.setBackgroundResource(R.drawable.rb);
+            url="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX2WkIBRaChxW";
+        }
+
+        else if (musicNum == 4){
+            result="EDM";
+            album.setBackgroundResource(R.drawable.edm);
+            url="https://open.spotify.com/user/digsterchile/playlist/5AF1pplkAt4P3ojx8JMk6i";
+        }
+
+        else if (musicNum == 5){
+            result="Classical";
+            album.setBackgroundResource(R.drawable.classical);
+            url="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWWEJlAGA9gs0";
+        }
+        Toast.makeText(MainActivity.this,"Success! The ideal music genre for you is "+result+".",Toast.LENGTH_SHORT).show();
+    }
 
     //--------------------------------------
     // File I/O
