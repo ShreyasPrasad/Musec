@@ -1,0 +1,7 @@
+#Sun Oct 22 01:24:22 EDT 2017
+base.0=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2ecae5851141ab637124747b57526453a15e4827
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_edbfb0b44ed5b99ad2dd28ebfe43f0f412794c1b/classes.dex
+base.1=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_edbfb0b44ed5b99ad2dd28ebfe43f0f412794c1b
+file.0=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2ecae5851141ab637124747b57526453a15e4827/classes.dex

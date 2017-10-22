@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/classes_f58859dccfc54d58261ad42c96465d28438d83f9.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/.android/build-cache/0d178cc0c0bfcc502bb74659142a5cbce0355644/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f58859dccfc54d58261ad42c96465d28438d83f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_bf4632fc25913e5edef229c535f94099c3957a25/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/THacks2/TestLibMuseAndroid/app/libs/libmuse_android.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="39ceeabf18cb8dc419db709a0fd4d26169a1126a">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/libmuse_android_9eb0b3e612ba6e6be6d3dc376f7868d5aeca3542.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_bf4632fc25913e5edef229c535f94099c3957a25.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="82f4477e7d994981e7bd5d892004dfcfaf247daf">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_edbfb0b44ed5b99ad2dd28ebfe43f0f412794c1b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/.android/build-cache/07e090a54f6f7289b806259bbd0c550bb733ceac/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5e54d152d8955e5ff03e67e0006567c9c2dab5d6/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/.android/build-cache/b50c40b247ba8d062da8c0ba9e06d70fa7a6d711/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/classes_6238f58889ceee13ffb3e1fa4cf85a06064094e6.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2ecae5851141ab637124747b57526453a15e4827/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/.android/build-cache/07e090a54f6f7289b806259bbd0c550bb733ceac/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/classes_5e54d152d8955e5ff03e67e0006567c9c2dab5d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/.android/build-cache/81415ae812beb20994d00aa33119944459952762/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/classes_52deccce9b0d2ae150e24eedc5d37a7469bd814e.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/.android/build-cache/81415ae812beb20994d00aa33119944459952762/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_52deccce9b0d2ae150e24eedc5d37a7469bd814e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/THacks2/TestLibMuseAndroid/app/libs/libmuse_android.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="39ceeabf18cb8dc419db709a0fd4d26169a1126a">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/2/libmuse_android_9eb0b3e612ba6e6be6d3dc376f7868d5aeca3542/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/.android/build-cache/6d51cc7f089724cc8174d8858144490b3190f5f2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/classes_3e0955fe4217483a13cc0e77b3ba12842ddca864.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/estherlee/.android/build-cache/42bff68040885f40f9fdb90c03e84a6cb0403a1d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/pre-dexed/debug/classes_5542c471f5590e4de47d84c16b7d0270bcb24516.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/.android/build-cache/b50c40b247ba8d062da8c0ba9e06d70fa7a6d711/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6238f58889ceee13ffb3e1fa4cf85a06064094e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/.android/build-cache/42bff68040885f40f9fdb90c03e84a6cb0403a1d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5542c471f5590e4de47d84c16b7d0270bcb24516/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/estherlee/.android/build-cache/6d51cc7f089724cc8174d8858144490b3190f5f2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3e0955fe4217483a13cc0e77b3ba12842ddca864/classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,25 @@
+#Sun Oct 22 01:24:20 EDT 2017
+renamed.7=classes2.dex
+renamed.6=classes6.dex
+renamed.5=classes4.dex
+renamed.4=classes8.dex
+renamed.3=classes5.dex
+renamed.2=classes.dex
+renamed.1=classes3.dex
+renamed.0=classes7.dex
+base.7=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_52deccce9b0d2ae150e24eedc5d37a7469bd814e
+base.6=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f58859dccfc54d58261ad42c96465d28438d83f9
+base.5=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5e54d152d8955e5ff03e67e0006567c9c2dab5d6
+base.4=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/2/libmuse_android_9eb0b3e612ba6e6be6d3dc376f7868d5aeca3542
+base.3=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6238f58889ceee13ffb3e1fa4cf85a06064094e6
+base.2=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3e0955fe4217483a13cc0e77b3ba12842ddca864
+base.1=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5542c471f5590e4de47d84c16b7d0270bcb24516
+base.0=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_bf4632fc25913e5edef229c535f94099c3957a25
+file.7=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_52deccce9b0d2ae150e24eedc5d37a7469bd814e/classes.dex
+file.6=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f58859dccfc54d58261ad42c96465d28438d83f9/classes.dex
+file.5=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5e54d152d8955e5ff03e67e0006567c9c2dab5d6/classes.dex
+file.4=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/2/libmuse_android_9eb0b3e612ba6e6be6d3dc376f7868d5aeca3542/classes.dex
+file.3=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6238f58889ceee13ffb3e1fa4cf85a06064094e6/classes.dex
+file.2=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3e0955fe4217483a13cc0e77b3ba12842ddca864/classes.dex
+file.1=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5542c471f5590e4de47d84c16b7d0270bcb24516/classes.dex
+file.0=/Users/estherlee/THacks2/TestLibMuseAndroid/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_bf4632fc25913e5edef229c535f94099c3957a25/classes.dex
